@@ -8,8 +8,7 @@ A cross-platform React Native application that fetches and displays live currenc
 ## Features
 
 - **Real-time Data**: Fetches currency rates from the API on load and refreshes every 10 seconds.
-
-- **Persistent Data**: Optionally stores fetched data locally with AsyncStorage (for offline use).
+- **Persistent Data**: Optionally stores fetched data locally with AsyncStorage.
 - **Search**: Provides a search bar to filter currency rates by country or currency name.
 - **Top Currencies**: Highlights the currencies with the highest and lowest conversion rates at the top.
 
