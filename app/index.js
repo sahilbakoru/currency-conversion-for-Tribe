@@ -18,7 +18,7 @@ export default function App() {
     return () => clearInterval(interval);
   }, []);
 
-  // Identify the highest and lowest conversion rates
+
   useEffect(() => {
     if (currencies.length > 0) {
       const sortedByRate = [...currencies].sort((a, b) => b.rate - a.rate);
@@ -27,7 +27,7 @@ export default function App() {
     }
   }, [currencies]);
 
-  // Filter the rest of the currencies based on the search query
+  
   useEffect(() => {
     const result = currencies.filter((currency) =>
       (currency.country.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -37,7 +37,7 @@ export default function App() {
     setFilteredCurrencies(result);
   }, [searchQuery, currencies, highestCurrency, lowestCurrency]);
 
-  // Render the two fixed currencies (highest and lowest) in a compact, side-by-side layout
+ 
   const renderTopCurrency = (item) => (
     <View style={styles.compactCard}>
       <Text style={styles.country}>{item.country}</Text>
@@ -45,7 +45,7 @@ export default function App() {
     </View>
   );
 
-  // Render the rest of the currencies in a clean, consistent card
+  
   const renderCurrency = (item) => (
     <View style={styles.regularCard}>
       <View style={styles.row}>
@@ -71,7 +71,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.title}>Currency Conversion Rates of USD</Text>
 
-      {/* Search Box (Fixed at the top) */}
+     
       <TextInput
         style={styles.searchBox}
         placeholder="Search by country or currency"
@@ -79,13 +79,13 @@ export default function App() {
         onChangeText={setSearchQuery}
       />
 
-      {/* Render the two fixed currencies (Highest and Lowest) */}
+     
       <View style={styles.fixedTopCurrencies}>
         {highestCurrency && renderTopCurrency(highestCurrency)}
         {lowestCurrency && renderTopCurrency(lowestCurrency)}
       </View>
 
-      {/* Render the rest of the currencies based on search */}
+      
       <FlatList
         data={filteredCurrencies}
         keyExtractor={(item) => item.currency}
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   fixedTopCurrencies: {
-    flexDirection: 'row', // Arrange the two top currencies side by side
+    flexDirection: 'row', 
     justifyContent: 'space-between',
     marginBottom: 20,
   },
