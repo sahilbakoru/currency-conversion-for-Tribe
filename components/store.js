@@ -1,7 +1,7 @@
 // store.js
 import {create} from 'zustand';
-import {AsyncStorage} from '@react-native-async-storage/async-storage';
-import { persist } from 'zustand/middleware';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { persist,createJSONStorage } from 'zustand/middleware';
 import axios from 'axios';
 
 const useCurrencyStore = create(
@@ -10,6 +10,7 @@ const useCurrencyStore = create(
       currencies: [],
       fetchRates: async () => {
         try {
+          console.log("fetching rates")
           const response = await axios.get('https://www.floatrates.com/daily/usd.json');
           const rates = Object.values(response.data).map((rate) => ({
             country: rate.name,
@@ -25,7 +26,7 @@ const useCurrencyStore = create(
     }),
     {
       name: 'currency-storage', // The name of the storage key
-      getStorage: () => AsyncStorage,
+      storage: createJSONStorage(() => AsyncStorage)
     }
   )
 );

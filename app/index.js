@@ -11,7 +11,6 @@ export default function App() {
 
   useEffect(() => {
     fetchRates();
-
     const interval = setInterval(() => {
       fetchRates();
     }, 10000);
