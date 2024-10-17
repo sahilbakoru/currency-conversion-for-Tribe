@@ -1,50 +1,42 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# Currency Rates App
 
-## Get started
+A cross-platform React Native application that fetches and displays live currency conversion rates. The app retrieves data from an external API and updates the displayed rates every 10 seconds, ensuring the latest conversion information is always available.
 
-1. Install dependencies
+## Features
 
+- **Real-time Data**: Fetches currency rates from the API on load and refreshes every 10 seconds.
+
+- **Persistent Data**: Optionally stores fetched data locally with AsyncStorage (for offline use).
+- **Search**: Provides a search bar to filter currency rates by country or currency name.
+- **Top Currencies**: Highlights the currencies with the highest and lowest conversion rates at the top.
+
+## Technologies Used
+
+- **React Native**: For building the mobile application.
+- **Zustand**: For efficient state management.
+- **AsyncStorage**: For persisting data locally.
+- **Axios**: For making HTTP requests to retrieve currency rates.
+- **Expo**: For running and testing the app.
+
+
+### Steps to Run the Project
+
+1. Clone the repository:
    ```bash
-   npm install
-   ```
+   git clone https://github.com/sahilbakoru/currency-conversion-for-Tribe
 
-2. Start the app
-
+2. Install dependencies:
    ```bash
-    npx expo start
-   ```
+    npm install
 
-In the output, you'll find options to open the app in a
+3. Start the application:
+   ```bash
+     npx expo start
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+4. Open the app:
+   
+     Use the Expo Go app on your mobile device or an emulator to scan the QR code and run the application.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Usage
+Once the app is running, it will display a list of currency conversion rates, which will update automatically every 10 seconds. You can search for specific currencies, and the highest/lowest conversion rates will always be highlighted at the top.
